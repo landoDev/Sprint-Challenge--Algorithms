@@ -111,16 +111,52 @@ class SortingRobot:
                     # pick up that item, take it to the smallest index then return to that spot in the loop and give it the previous smallest index
         # iterate through the given list
         # we may not have to account for - 1
-        for item in range(0, len(l)):
+        # for item in range(0, len(l)):
             # initialize the current position
             # pick up the first item
-            self.item = l[self._position]
-            smallest_index = self._position
-            # while there is list left
+            # index = item # self._position
+            # self.item = l[index] # l[self._position]
+            # smallest_index = index
+            # # while there is list left
+            # for unsorted in range(index, len(l))
+            #     # move
+            #     self.move_right()
+            #     check = self.compare_item() 
+            #     # check returns 1 if held item is greater, 0 if it is equal and -1 if it's less than
+            #     # check if smaller than held item
+            #     if check >= 0:
+            #         # check if that item is smaller than smallest index
+            #         if smallest_index > self.item
+        # bubble sort plan given the methods we were given
+        # set master length
+        self.set_light_on()
+        end = len(self._list)
+        # loop through the list
+        for item in range(end - 1):
+            # while robot can move right
+            # grab the item at the current index
+            
             while self.can_move_right():
-                # move
+                self._item = self._list[self._position]
                 self.move_right()
-                self.compare_item()
+                # compare the next item with the current item
+                check = self.compare_item()
+                # if the held item is greater than the item in front of it
+                if check > 0:
+                    # swap items
+                    self.swap_item()
+                    # move left and swap to finish swap
+                    self.move_left()
+                    self.swap_item()
+                    self.move_right()
+            # move back to start
+            while self.can_move_left():
+                self.move_left()
+        self.set_light_off()
+                    
+
+                    
+
 
 
 

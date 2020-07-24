@@ -25,7 +25,7 @@ def eggtality(building):
     while f less than length of building
         throw egg
         if broken
-            return f
+            return f + 1
         f += 1
 
 Runtime is O(n). The worst case is I have to go through every floor in the building before it breaks.
