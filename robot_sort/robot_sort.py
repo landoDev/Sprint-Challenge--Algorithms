@@ -96,8 +96,33 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        # Plan
+        # Use selection sort to sort the list
+        # have to go through the whole list 
+            # for each part of the list 
+            # see if the value at the index is the smallest in all the numbers after
+        # for the length of the list - 1
+        # maybe while robot can move right
+            # initialize the current index
+            # initialize the smallest index
+            # starting at the current index and for every element until the end of the list
+                # if the item is smaller than the smallest index
+                    # smallest index = item
+                    # pick up that item, take it to the smallest index then return to that spot in the loop and give it the previous smallest index
+        # iterate through the given list
+        # we may not have to account for - 1
+        for item in range(0, len(l)):
+            # initialize the current position
+            # pick up the first item
+            self.item = l[self._position]
+            smallest_index = self._position
+            # while there is list left
+            while self.can_move_right():
+                # move
+                self.move_right()
+                self.compare_item()
+
+
 
 
 if __name__ == "__main__":
